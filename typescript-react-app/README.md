@@ -415,6 +415,55 @@ console.log(table.getDiscountedPrice(5));
 ```
 El resultado sería 40.
 
+- Usemos un ejemplo de clases para gestionar el manejo de configuración regional y moneda
+
+```Typescript
+class CurrencyFormatter {
+    private amount: number;
+    private locale: string;
+    private currency: string;
+
+    constructor(amount: number, locale: string = 'en-US', currency: string = 'USD') {
+        this.amount = amount;
+        this.locale = locale;
+        this.currency = currency;
+    }
+
+    public setLocale(locale: string, currency: string): void {
+        this.locale = locale;
+        this.currency = currency;
+    }
+
+    public format(): string {
+        return this.amount.toLocaleString(this.locale, {
+            style: 'currency',
+            currency: this.currency
+        });
+    }
+}
+
+// Uso de la clase con diferentes configuraciones regionales
+const formatter = new CurrencyFormatter(1234.56);
+
+console.log(formatter.format()); // Default: 'en-US', 'USD'
+
+formatter.setLocale('de-DE', 'EUR');
+console.log(formatter.format()); // German: "1.234,56 €"
+
+formatter.setLocale('ja-JP', 'JPY');
+console.log(formatter.format()); // Japanese: "￥123,457"
+
+formatter.setLocale('es-ES', 'EUR');
+console.log(formatter.format()); // Spanish: "1.234,56 €"
+
+```
+Explicación del Código
+Clase CurrencyFormatter: Esta clase encapsula la funcionalidad para manejar montos de dinero. Se inicializa con un monto y opcionalmente con una configuración regional y un tipo de moneda.
+
+Método setLocale: Este método permite cambiar la localidad y la moneda, permitiendo reutilizar el objeto para diferentes formatos sin necesidad de crear una nueva instancia.
+
+Método format: Utiliza toLocaleString() para formatear el monto según la configuración regional y el tipo de moneda especificados. Esto ajusta automáticamente el formato de números (puntos y comas) y el símbolo de la moneda.
+
 ### Enumeraciones
 
 Las enumeraciones nos permitenpara declarar un conjunto significativo de nombres descriptivos a los que se puede configurar una variable:
