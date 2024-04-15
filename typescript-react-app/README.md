@@ -463,6 +463,66 @@ Clase CurrencyFormatter: Esta clase encapsula la funcionalidad para manejar mont
 Método setLocale: Este método permite cambiar la localidad y la moneda, permitiendo reutilizar el objeto para diferentes formatos sin necesidad de crear una nueva instancia.
 
 Método format: Utiliza toLocaleString() para formatear el monto según la configuración regional y el tipo de moneda especificados. Esto ajusta automáticamente el formato de números (puntos y comas) y el símbolo de la moneda.
+- Ejemplo con verificación de formato y manejo de "." o ",":
+```Typescript
+class CurrencyFormatter {
+    private amount: number;
+    private locale: string;
+    private currency: string;
+
+    constructor(amount: string, locale: string = 'en-US', currency: string = 'USD') {
+        if (!this.isValidFormat(amount, locale)) {
+            throw new Error(`Invalid format for the locale ${locale}. Expected format with '${this.getDecimalSeparator(locale)}' as decimal separator.`);
+        }
+        this.amount = parseFloat(amount.replace(',', '.'));
+        this.locale = locale;
+        this.currency = currency;
+    }
+
+    public setLocale(locale: string, currency: string): void {
+        this.locale = locale;
+        this.currency = currency;
+    }
+
+    public format(): string {
+        return this.amount.toLocaleString(this.locale, {
+            style: 'currency',
+            currency: this.currency
+        });
+    }
+
+    private isValidFormat(input: string, locale: string): boolean {
+        const usesComma = ['de-DE', 'es-ES', 'fr-FR', 'es-CO'].includes(locale);
+        const decimalSeparator = this.getDecimalSeparator(locale);
+        return input.includes(decimalSeparator) && input.split(decimalSeparator)[1].length <= 2;
+    }
+
+    private getDecimalSeparator(locale: string): string {
+        return ['de-DE', 'es-ES', 'fr-FR', 'es-CO'].includes(locale) ? ',' : '.';
+    }
+}
+
+// Ejemplo válido
+try {
+    const formatter = new CurrencyFormatter('1234,56', 'es-CO', 'COP');
+    console.log(formatter.format()); // Colombian: "$1.234,56"
+} catch (error) {
+    console.error(error);
+}
+
+// Ejemplo no válido
+// Uso incorrecto de la clase con formato inválido
+try {
+    const formatterInvalid = new CurrencyFormatter('1234.56', 'es-CO', 'COP');
+    console.log(formatterInvalid.format());
+} catch (error) {
+    if (error instanceof Error) {
+        console.error(error.message); // Esperado: "Invalid format for the locale es-CO: 1234.56"
+    } else {
+        console.error('An unexpected error occurred');
+    }
+}
+```
 
 ### Enumeraciones
 
