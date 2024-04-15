@@ -1,0 +1,24 @@
+@import "../../base/colors";
+.item-list {
+    padding: 10px;
+    background-color: map-get($grey-color, "lighten-2");
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    box-shadow: 0 5px 50px rgba(32, 35, 41, .15)
+}
+
+.item-list-p {
+    margin: 24px 0 24px 24px;
+    width: calc(100% - 120px);
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    display: flex;
+}
+
+.item-list-p--complete {
+    text-decoration: line-through
+}

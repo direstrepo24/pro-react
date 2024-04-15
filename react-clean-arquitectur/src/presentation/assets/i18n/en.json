@@ -1,0 +1,9 @@
+{
+    "title":"Task lists",
+    "emptyRecords":"No records found...",
+    "newTaskTitle":"Write your new task",
+    "actions":{
+        "add": "Add",
+        "cancel": "Cancel"
+    }
+}

@@ -1,0 +1,11 @@
+//Tailwind
+@import '@tailwind/base';
+@import '@tailwind/components';
+@import '@tailwind/utilities';
+ 
+// Settings
+@import './base/settings';
+ 
+// Components - Base
+@import './components/base/input';
+@import './components/base/item-list';

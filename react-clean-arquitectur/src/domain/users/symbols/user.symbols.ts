@@ -1,0 +1,7 @@
+export const USER_SYMBOLS = {
+    USER_REPOSITORY: Symbol('USER_REPOSITORY'),
+    USER_LIST: Symbol('USER_LIST'),
+    USER_CREATE: Symbol('USER_CREATE'),
+    USER_UPDATE: Symbol('USER_UPDATE'),
+    USER_DELETE: Symbol('USER_DELETE')
+}

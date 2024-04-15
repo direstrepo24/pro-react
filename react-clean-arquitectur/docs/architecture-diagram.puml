@@ -1,0 +1,48 @@
+@startuml
+title React Template - Architecture Design
+package src {
+    folder "Presentation" {
+        class  App
+    }
+    folder Application{
+       folder "Queries" {
+         class  UseCaseQuery1
+       }
+       folder "Commands" {
+         class  UseCaseCommand1
+       }
+       App --> UseCaseQuery1 : <<use>>
+       App --> UseCaseCommand1 : <<use>>
+    }
+    folder Domain {
+        class Entity {
+           -data: DataValue
+           +getData(): DataValue
+           +setData(data: DataValue)
+        }
+        interface "RepositoryInterface" <<Interface>> {
+          +get(): DataValue
+          +save(data: DataValue)
+        }
+ 
+       UseCaseQuery1 --> Entity : <<use>>
+       UseCaseQuery1 ..> RepositoryInterface : <<use>>
+    }
+    folder Infraestructure{
+       class RepositoryImplementation {
+          +get(): DataValue
+          +save(data: DataValue)
+       }
+       RepositoryImplementation ..|> RepositoryInterface
+    }
+    folder Core{
+       interface HttpClient {
+         +get(): ResultSet
+         +post(data: DataValue): ResultSet
+         +put(data: DataValue): ResultSet
+         +delete()
+      }
+      RepositoryImplementation --> HttpClient : <<use>>
+    }
+}
+@enduml

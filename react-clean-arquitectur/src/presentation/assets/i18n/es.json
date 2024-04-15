@@ -1,0 +1,9 @@
+{
+    "title":"Lista de tareas",
+    "emptyRecords":"No se encontraron registros...",
+    "newTaskTitle":"Escribe tu nueva tarea",
+    "actions":{
+        "add": "Agregar",
+        "cancel": "Cancelar"
+    }
+}

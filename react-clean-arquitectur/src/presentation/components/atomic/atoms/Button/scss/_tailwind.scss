@@ -1,0 +1,29 @@
+@import '@tailwind/base';
+@import '@tailwind/components';
+@import '@tailwind/utilities';
+ 
+//Mixins
+//16px tamaño de fuente raiz
+//Formula = rem * tamaño fuente = pixeles
+@mixin btn-tailwind-desktop{
+    @apply disabled:opacity-50 disabled:pointer-events-none;  // = 0.5
+    @apply px-20 py-4; // = 5rem = 80px, 1rem = 16px
+    @apply rounded-2xl; // = 1rem = 16px
+    // font: normal bold 14px/20px Roboto;
+    @apply not-italic; // = font-style: normal
+    @apply font-bold;  // = font-weight: 700; equivalente a Bold
+    @apply text-sm; // = font-size: 0.875rem; /* 14px */, line-height: 1.25rem; /* 20px */
+    @apply opacity-100; // =  Equivalente a opacity: 1;
+    @apply text-center;  // =  Equivalente a text-align: center;
+}
+ 
+@mixin btn-tailwind-mobile{
+    @apply disabled:opacity-50 disabled:pointer-events-none;  // = 0.5
+    @apply px-8 py-4; // = 2rem = 32px, 1rem = 16px
+    @apply rounded-2xl; // = 1rem = 16px
+    @apply not-italic; // = font-style: normal
+    @apply font-bold;  // = font-weight: 700; equivalente a Bold
+    @apply text-sm; // = font-size: 0.875rem; /* 14px */, line-height: 1.25rem; /* 20px */
+    @apply opacity-100; // =  Equivalente a opacity: 1;
+    @apply text-center;  // =  Equivalente a text-align: center;
+}
