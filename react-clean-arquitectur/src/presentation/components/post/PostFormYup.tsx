@@ -10,10 +10,6 @@ interface PostFormProps {
 
 }
 
-
-
-
-
 const PostFormYup =({users=[],onClick}:Readonly<PostFormProps>)=> {
 
     const validationSchema = Yup.object().shape({
