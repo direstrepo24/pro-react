@@ -381,3 +381,5 @@ export default PostFormYup
       } }/>
   ```
 - Probamos con el comando `npm run dev`
+
+![alt text](docs/form.png)
