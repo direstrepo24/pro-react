@@ -6,7 +6,9 @@ export class UserMapper {
     static toDom(dto: UserDto): UserDom {
       return new UserDom(
         dto.name,
-        dto.userName
+        dto.userName,
+        dto.email,
+        dto.id.toString()
       );
     }
   

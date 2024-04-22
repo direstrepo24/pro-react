@@ -7,9 +7,17 @@ import { useTask } from '@presentation/hooks/use-task'
 import Button from '@presentation/components/atomic/atoms/Button';
 import TaskSearch from '@presentation/components/task/TaskSearch';
 import TaskList from '@presentation/components/task/TaskList';
+import PostForm from '@presentation/components/post/PostForm';
+import { usePost } from '@presentation/hooks/use-post';
+import { AllUsersUseCase } from '@application/users';
+import { USER_SYMBOLS } from '@domain/users';
+import { CreatePublicationUseCase } from '@application/post/commands/create-post.usecase';
+import { POST_SYMBOLS, PostRequestDom } from '@domain/post';
+import PostFormYup from '@presentation/components/post/PostFormYup';
  
 function TaskPage() {
   const {t} = useTranslation();
+  const {users, addPost } = usePost(di.get<AllUsersUseCase>(USER_SYMBOLS.USER_LIST), di.get<CreatePublicationUseCase>(POST_SYMBOLS.POST_CREATE));
   const {
     tasks,
     loading,
@@ -26,6 +34,12 @@ function TaskPage() {
     );
   return (
     <>
+ {/*     <PostForm users={users} onClick={function (_: PostRequestDom): void {
+        addPost(_)
+      } }/>  */}
+      <PostFormYup users={users} onClick={function (_: PostRequestDom): void {
+        addPost(_)
+      } }/>
       <h1 className='text-red-500 uppercase text-lg mt-5'>{t("title")}</h1>
       <TaskSearch onChange={(query: string) => query ? searchTasks(query): allTasks()} />
       {loading && ( <h1>Cargando...</h1>)}
