@@ -3,6 +3,8 @@ import { UserDom } from "@domain/users"
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form"
 import * as Yup from 'yup';
+import Button from "../atomic/atoms/Button";
+import CheckIcon from "@presentation/assets/icons/CheckIcon";
 
 interface PostFormProps {
     users: UserDom[],
@@ -81,9 +83,13 @@ const PostFormYup =({users=[],onClick}:Readonly<PostFormProps>)=> {
         </div>
   
         {/* Botón de envío */}
-        <div>
-          <input type="submit" className="btn btn-success w-full" />
-        </div>
+        <Button
+            onClick={handleSubmit(onSubmit)}
+            color="primary"
+        >
+            Register {/* texto del botón */}
+            <CheckIcon className="ml-2 h-5 w-5 text-white" /> {/* ícono con margen y tamaño */}
+        </Button>
       </div>
     </form>
   );
