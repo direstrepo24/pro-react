@@ -382,4 +382,8 @@ export default PostFormYup
   ```
 - Probamos con el comando `npm run dev`
 
+## Componentes reutilizables - Sistema de diseño atómico
+
+https://storybook.js.org/docs/writing-stories
+
 ![alt text](docs/form.png)

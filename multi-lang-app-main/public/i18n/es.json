@@ -1,0 +1,7 @@
+{
+    "title": "Aplicación en varios idiomas",
+    "label": "Selecciona otro lenguaje!",
+    "about": "Sobre mí",
+    "home": "Inicio",
+    "user": "Mi nombre es: {{name}}"
+}
