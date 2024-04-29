@@ -1,0 +1,10 @@
+@import '@tailwind/base';
+@import '@tailwind/components';
+@import '@tailwind/utilities';
+ 
+
+
+
+@mixin textbox-tailwind {
+    @apply p-2 border-b-2 transition border-blue-500 focus:border-blue-700 outline-none;
+  }

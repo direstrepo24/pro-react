@@ -1,0 +1,49 @@
+// textbox.scss
+
+@import './tailwind'; // Importar tailwind (asegúrate de que esté configurado correctamente en tu proyecto)
+@import './variables'; // Importar variables si es necesario
+
+.textbox-container {
+  position: relative;
+}
+
+.textbox-line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: $blue-outline; // Línea inferior blanca
+  bottom: 0;
+}
+
+.textbox {
+  @include textbox-tailwind; // Aplicar las clases de tailwind
+  // Añadir estilos adicionales si es necesario
+  border: none; // Quitar el borde
+  border-radius: 2; // Quitar el redondeo de la esquina superior izquierda y derecha
+  box-shadow: none; // Quitar cualquier sombra
+  outline: none; // Quitar el enfoque del marco al hacer clic
+}
+
+.textbox-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 12px;
+  color: $blue-outline; // Color del texto
+  pointer-events: none; // Evitar que la etiqueta interfiera con los eventos de entrada
+  transition: top 0.3s, font-size 0.3s, color 0.3s; // Transiciones suaves
+}
+
+.textbox:focus ~ .textbox-label,
+.textbox:not(:placeholder-shown) ~ .textbox-label {
+  top: -20px; // Mover la etiqueta hacia arriba al enfocar o cuando hay texto en el textbox
+  font-size: 0.75rem; // Tamaño de fuente más pequeño cuando se mueve hacia arriba
+  color: $blue-outline-hover; // Cambiar color de la etiqueta en enfoque
+}
+
+
+
+
+
+
+

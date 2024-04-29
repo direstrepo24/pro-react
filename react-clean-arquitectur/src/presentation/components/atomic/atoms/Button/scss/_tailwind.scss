@@ -51,3 +51,7 @@
     @apply shadow-md; // Sombra suave para profundidad
     @apply transition-colors; // Transiciones suaves de colores
 }
+
+@mixin textbox-tailwind {
+    @apply p-2 border-b-2 transition border-blue-500 focus:border-blue-700 outline-none;
+  }

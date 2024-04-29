@@ -1,0 +1,24 @@
+// combobox.scss
+
+@import './tailwind'; // Importar tailwind (asegúrate de que esté configurado correctamente en tu proyecto)
+@import './variables'; // Importar variables si es necesario
+
+.combobox-container {
+  position: relative;
+}
+
+.combobox {
+  @include combobox-tailwind;
+  
+}
+
+.combobox-icon {
+    position: absolute;
+    right: 0; // Corregir la propiedad right
+    inset-y: 0;
+    display: flex;
+    align-items: center;
+    padding-right: 0.5rem; // Ajustar el padding si es necesario
+    pointer-events: none;
+  }
+  
