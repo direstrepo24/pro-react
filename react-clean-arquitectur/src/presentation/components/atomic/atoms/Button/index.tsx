@@ -10,11 +10,12 @@ export interface ButtonProps {
     className?: string;
     children?: ReactNode;
     onClick?: () => void;
+    icon?:boolean;
 }
 const Button = ({ className, children, onClick,  color = 'primary', disabled = false,  }: Readonly<ButtonProps>) => {
     const btnClass = classNames(
-        'btn',
-        `btn--${color}`,
+        'mak-btn',
+        `mak-btn--${color}`,
         className
     );
     return (

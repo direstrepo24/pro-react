@@ -1,35 +1,43 @@
+// button.scss
 @import './tailwind';
-@import './variables';
-//@import './size';
- 
-.btn{
-    font-family: 'Roboto', ui-sans-serif, system-ui, sans-serif;
+@import './variables'; // Importar variables
+
+.mak-btn {
+  @include btn-tailwind-desktop;
+  background-color: $button-bg; // Fondo blanco
+  color: $button-text; // Color de texto aplicado desde variables.scss
+  font-family: 'Montserrat Alternates', sans-serif; // Fuente específica para el botón
+  border-width: 2px; // Ancho del borde
+  border-style: solid; // Estilo del borde
+  border-radius: 0; // Esquinas cuadradas
 }
- 
-.btn--primary{
-    background: transparent linear-gradient(180deg, $red-light 0%, $red-dark 100%) 0% 0% no-repeat padding-box !important;
-    box-shadow: -5px -5px 15px $white;
-    color: $primary-text-color;
+
+.mak-btn--primary {
+  background: transparent linear-gradient(180deg, $button-bg 0%, rgba($button-bg, 0.9) 100%) 0% 0% no-repeat padding-box; // Gradiente blanco sutil
+  border-color: $blue-outline; // Contorno azul fijo
+  box-shadow: -5px -5px 15px rgba($button-bg, 0.2); // Sombra suave
 }
- 
-.btn--primary:hover{
-    background: $red-main 0% 0% no-repeat padding-box;
-    box-shadow: 0px 0px 16px $vinotinto;
+
+.mak-btn--primary:hover {
+  background: transparent linear-gradient(180deg, $button-bg 0%, rgba($button-bg, 0.95) 100%) 0% 0% no-repeat padding-box; // Gradiente blanco más claro en hover
+  box-shadow: 0px 0px 16px $blue-outline; // Sombra más intensa con contorno azul en hover
 }
- 
-.btn--secondary{
-    background: $secondary 0% 0% no-repeat padding-box;
-    color: $secondary-text-color;
-    box-shadow: 2px 2px 5px  $grey;
+
+.mak-btn--secondary {
+  background: $button-bg; // Fondo blanco
+  color: $button-text; // Color de texto aplicado desde variables.scss
+  border-color: $blue-outline; // Contorno azul fijo
+  box-shadow: 2px 2px 5px rgba($button-bg, 0.2); // Sombra suave
 }
- 
-.btn--secondary:hover{
-    background: $secondary 0% 0% no-repeat padding-box;
-    box-shadow: 5px 5px 15px  $grey;
+
+.mak-btn--secondary:hover {
+  background: transparent linear-gradient(180deg, $button-bg 0%, rgba($button-bg, 0.95) 100%) 0% 0% no-repeat padding-box; // Gradiente blanco más claro en hover
+  box-shadow: 5px 5px 15px rgba($button-bg, 0.3); // Sombra más intensa con contorno azul en hover
+  border-color: $blue-outline; // Contorno azul en hover
 }
- 
-.btn--third{
-    color: $third-text-color;
-    text-decoration: underline;
+
+.mak-btn--third {
+  color: $button-text; // Color de texto aplicado desde variables.scss
+  text-decoration: underline; // Subrayado para el botón terciario
 }
- 
+

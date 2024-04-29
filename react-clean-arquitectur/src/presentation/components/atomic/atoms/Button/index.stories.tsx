@@ -4,7 +4,7 @@ import Button from './index';
  
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-    title: 'Tuya Template/Atoms/Button',
+    title: 'Makers Template/Atoms/Button',
     component: Button,
     tags: ['autodocs'],
     argTypes: {
@@ -24,6 +24,7 @@ const meta = {
             control: 'boolean',
             description: 'Permite deshabilitar el boton',
         },
+
         type: {
             control: {
                 type: 'select',

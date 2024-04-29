@@ -27,3 +27,27 @@
     @apply opacity-100; // =  Equivalente a opacity: 1;
     @apply text-center;  // =  Equivalente a text-align: center;
 }
+
+// Mixins
+@mixin btn-tailwind-desktop-mak {
+    @apply disabled:opacity-50 disabled:pointer-events-none;
+    @apply px-20 py-4; // Padding ajustado a tu diseño original
+    @apply border-2 border-solid; // Borde sólido
+    @apply rounded-2xl; // Bordes redondeados grandes
+    @apply font-bold; // Fuente en negrita
+    @apply text-sm; // Tamaño de texto pequeño
+    @apply text-center; // Texto centrado
+    @apply shadow-md; // Sombra suave para profundidad
+    @apply transition-colors; // Transiciones suaves de colores
+}
+
+@mixin btn-tailwind-mobile-mak {
+    @apply disabled:opacity-50 disabled:pointer-events-none;
+    @apply px-8 py-4; // Menor padding para móviles
+    @apply rounded-2xl; // Bordes redondeados grandes
+    @apply font-bold; // Fuente en negrita
+    @apply text-sm; // Tamaño de texto pequeño
+    @apply text-center; // Texto centrado
+    @apply shadow-md; // Sombra suave para profundidad
+    @apply transition-colors; // Transiciones suaves de colores
+}

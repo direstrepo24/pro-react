@@ -9,10 +9,21 @@ $secondary: #F4F4F4;
 $grey: #9e9e9e;
  
 //Text Color
-$primary-text-color: $white;
+$primary-text-color: $black;
 $secondary-text-color: $red-main;
 $third-text-color: $black;
 
 //Screen
 $mobile-screen: 366px;
 $desktop-screen: 1080px;
+//nuevas
+// Additional variables for button
+$blue-outline: #2D3079;
+$button-bg: $white; // Use global white
+$button-text: $black; // Use global black
+
+// _variables.scss
+
+
+
+
