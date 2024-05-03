@@ -5,13 +5,20 @@ $red-main: #ED1C29;
 $black: #3D4657;
 $white: #FFFFFF;
 $vinotinto: #ED1C2985;
-$secondary: #F4F4F4;
 $grey: #9e9e9e;
+$purple: #2D3079;
+$blue-violet: blueviolet;
+
  
 //Text Color
 $primary-text-color: $black;
 $secondary-text-color: $red-main;
-$third-text-color: $black;
+$third-text-color: $white;
+
+//Bg-Colors
+$primary: $white;
+$secondary: $grey;
+$tertiary : $purple;
 
 //Screen
 $mobile-screen: 366px;

@@ -2,14 +2,35 @@
 
 @import './tailwind'; // Importar tailwind (asegúrate de que esté configurado correctamente en tu proyecto)
 @import './variables'; // Importar variables si es necesario
+@import '../../globalvar';
 
 .combobox-container {
   position: relative;
 }
 
 .combobox {
+  @include combobox-tailwind; 
+  $boder-color: $boder-color; 
+}
+
+.combobox-primary{
   @include combobox-tailwind;
-  
+  background-color: $primary; 
+  color: $primary-text-color;  
+}
+
+.combobox-secondary{
+  @include combobox-tailwind;
+  background-color: $secondary;  
+  color: $secondary-text-color
+
+}
+
+.combobox-tertiary{
+  @include combobox-tailwind;
+  background-color: $tertiary;
+  color: $third-text-color;
+
 }
 
 .combobox-icon {

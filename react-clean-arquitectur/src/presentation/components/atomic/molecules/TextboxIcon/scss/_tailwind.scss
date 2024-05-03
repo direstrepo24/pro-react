@@ -1,0 +1,12 @@
+@import '@tailwind/base';
+@import '@tailwind/components';
+@import '@tailwind/utilities';
+ 
+
+
+
+@mixin textboxIcon-tailwind {
+
+    @apply flex items-center justify-between p-2 border-b-2 transition border-blue-500 focus:border-blue-700 text-left outline-none;
+
+  }
