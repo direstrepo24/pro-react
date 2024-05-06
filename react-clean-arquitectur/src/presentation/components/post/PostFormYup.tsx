@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form"
 import * as Yup from 'yup';
 import Button from "../atomic/atoms/Button";
 import CheckIcon from "@presentation/assets/icons/CheckIcon";
+import TextboxIcon from "../atomic/molecules/TextboxIcon";
+import IconText from "@presentation/assets/icons/IconText";
 
 interface PostFormProps {
     users: UserDom[],
@@ -82,6 +84,21 @@ const PostFormYup =({users=[],onClick}:Readonly<PostFormProps>)=> {
            <div className="invalid-feedback  text-black">{errors.body?.message}</div>
         </div>
   
+
+        <div>
+          
+          <TextboxIcon
+            color="primary"
+            icon={<IconText />}
+            label="Username"
+            placeholder=""
+            type="text"
+          />
+        </div>
+
+        
+
+
         {/* Botón de envío */}
         <Button
             onClick={handleSubmit(onSubmit)}

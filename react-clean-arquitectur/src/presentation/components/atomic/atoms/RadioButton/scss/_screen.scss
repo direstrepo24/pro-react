@@ -1,0 +1,13 @@
+@import './variables';
+
+@mixin mobile-screen{
+    @media (max-width: $desktop-screen) {
+        @content;
+    }
+}
+ 
+@mixin desktop-screen{
+    @media (min-width: ($desktop-screen + 1px)) {
+        @content;
+    }
+}

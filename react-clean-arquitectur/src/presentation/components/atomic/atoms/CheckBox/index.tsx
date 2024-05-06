@@ -38,10 +38,11 @@ const CheckBox: React.FC<CheckBoxProps> = ({
   });
 
   return (
-    <div className={checkboxClass} onClick={handleChange}>
-      <div className="checkbox-icon"></div>
-      {label && <label className="checkbox-label">{label}</label>}
-    </div>
+      <div className='checkbox-container' >
+        <input type="checkbox" className={checkboxClass} onClick={handleChange} />
+
+        {label && <label className="checkbox-label">{label}</label>}
+      </div>
   );
 };
 

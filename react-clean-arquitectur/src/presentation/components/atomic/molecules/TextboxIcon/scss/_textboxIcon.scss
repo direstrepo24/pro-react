@@ -16,6 +16,14 @@
   bottom: 0;
 }
 
+.textboxIcon-line--error {
+  background-color: $error-line ;
+}
+
+.textboxIcon-line--success {
+  background-color: $success-line ;
+}
+
 .textboxIcon {
   @include textboxIcon-tailwind; // Aplicar las clases de tailwind
 

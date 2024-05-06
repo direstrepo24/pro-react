@@ -1,6 +1,7 @@
 // checkbox.scss
 @import './tailwind'; // Importar tailwind (asegúrate de que esté configurado correctamente en tu proyecto)
 @import './variables'; // Importar variables si es necesario
+@import '../../globalvar';
 
 .checkbox-container {
   display: flex;
@@ -9,7 +10,7 @@
 
 .checkbox-label {
   margin-left: 8px;
-  color: $black; // Color del texto
+  color: $label-color; // Color del texto
 }
 
 .checkbox-input {
