@@ -14,7 +14,8 @@ const ComboBox: React.FC<ComboBoxProps> = ({ variant = 'primary', options = [], 
 
   return (
     <div className="combobox-container">
-      <select className={comboboxClass} defaultValue={defaultValue}>
+     {/*  <select className={`bg-white ${comboboxClass}`} defaultValue={defaultValue}> */}
+     <select className={comboboxClass} defaultValue={defaultValue}>
         {options.map((option, index) => (
           <option key={index} value={option}>
             {option}

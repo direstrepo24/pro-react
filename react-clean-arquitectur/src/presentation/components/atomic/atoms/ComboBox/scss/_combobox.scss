@@ -8,17 +8,34 @@
 }
 
 .combobox {
-  @include combobox-tailwind;
-  
+  @include combobox-tailwind; // Aplicar estilos de Tailwind utilizando la directiva @include
+ 
 }
 
-.combobox-icon {
-    position: absolute;
-    right: 0; // Corregir la propiedad right
-    inset-y: 0;
-    display: flex;
-    align-items: center;
-    padding-right: 0.5rem; // Ajustar el padding si es necesario
-    pointer-events: none;
-  }
+ .combobox-primary {
+ 
+  background-color: $white // Fondo blanco para la variante primaria
+} 
+
+.combobox-secondary {
+  @include combobox-tailwind;
+ background-color: $red-light; // Aplicar estilo de fondo blanco y borde azul para la variante secundaria
+}
+
+/* .combobox-primary {
+  @apply bg-white border-blue-500; // Aplicar estilo de fondo blanco y borde azul para la variante primaria
+} */
+
+/* .combobox-primary {
+  background-color: rgb(241, 18, 18); // Fondo blanco
+  border-color: #2D3079; // Borde azul para la variante primaria
+} */
+
+/* .combobox-secondary {
+  @apply bg-red-300 border-blue-500; // Aplicar estilo de fondo blanco y borde azul para la variante secundaria
+} */
+
+.combobox-tertiary {
+  @apply bg-white border-blue-500; // Aplicar estilo de fondo blanco y borde azul para la variante terciaria
+}
   
